@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: vote-app-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vote
+      version: v1
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: vote
+        version: v1
+        tier: frontend
+    spec:
+      containers:
+        - name: vote-app-container
+          image: amitfegade121/vote:v1
+          ports:
+            - containerPort: 80

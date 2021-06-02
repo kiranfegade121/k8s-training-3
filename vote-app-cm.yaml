@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vote-app-cm
+data:
+  dbhost: "192.168.0.1"
+  port: "3306"
+  dburl: "jdbc:mysql://192.168.0.1:3306/hr"
+# kubectl create cm vote-app-cm  --from-literal=dbhost="192.168.0.1" \
+#                                 --from-literal=port=3306 \
+#                                 --from-literal=dburl="jdbc:mysql://192.168.0.1:3306/hr"
